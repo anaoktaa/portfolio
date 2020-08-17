@@ -1,0 +1,82 @@
+.main-content {
+    height: 100vh;
+    margin-top: 70px;
+    padding: var(--main-vertical-padding) var(--main-horizontal-padding);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.main-content-img-frame {
+    margin-top: 50px;
+    height: 110px;
+    width: 110px;
+    background-size: cover;
+    background-position: -10px 3px;
+    background-size: 130px;
+    border-radius: 50%;
+    background-image: url('../../assets//images/avatar-2.jpg');
+    overflow: hidden;
+}
+
+.main-content-name {
+    font-size: 38px;
+    margin: 18px 0 0;
+    letter-spacing: 1.2px;
+    font-family: 'Barlow Condensed', sans-serif;
+}
+
+.main-content-what-i-am {
+    font-size: 16px;
+    margin: 10px 0 0;
+    font-family: 'Heebo', sans-serif;
+}
+
+.main-content-media-social {
+    padding: 35px 0 ;
+    display: flex;
+    justify-content: center;
+
+}
+
+.main-content-icon {
+    padding: 5px 10px;
+    margin: 0 5px;
+    transition: all .5s;
+    cursor: pointer;
+    transform: translateY(0);
+}
+
+.main-content-icon:hover {
+    transform: translateY(-10px);
+}
+
+.button {
+    padding: 10px 25px;
+    border-radius: 30px;
+    border: none;
+    color: white;
+    background-color: #f33a4e;
+    font-family: 'Heebo', sans-serif;
+    font-size: 16px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.button:hover {
+
+    animation-name: example;
+    animation-duration: .3s;
+}
+
+@keyframes example {
+    0% {
+        transform: scaleX(1);
+    }
+    50% {
+        transform: scale(.78);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
