@@ -1,12 +1,23 @@
-import React from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 
 import Particles from '../particles/particles.component';
+import withWindowResize from '../with-window-resize/with-window-resize.component';
 
 import './main-content.styles.css';
 
-const MainContent = () => {
+const MainContent = ({ actualSize }) => {
+    const mainContentRef = useRef(null);
+    const [ actualHeight, setActualHeight ] = useState(null);
+
+    useEffect( () => {
+        if(mainContentRef.current){
+            setActualHeight(mainContentRef.current.offsetHeight);
+        }
+
+    }, [mainContentRef, setActualHeight]);
+
     return (
-        <main className='main-content'>
+        <main ref={mainContentRef} className='main-content'>
             <div className='main-content-img-frame'/>
             <p className='main-content-name'>Ana Oktaviana</p>
             <p className='main-content-what-i-am'>I'm a Front End Developer</p>
@@ -25,7 +36,10 @@ const MainContent = () => {
                 </div>
             </div>
             <button className='ripple'>Show More</button>
-            <Particles/>
+            <Particles
+                actualHeight={actualHeight}
+                actualWidth={actualSize.width}
+            />
         </main>
     )
 };
@@ -37,4 +51,4 @@ const style= {
     }
 }
 
-export default MainContent;
+export default withWindowResize(MainContent);

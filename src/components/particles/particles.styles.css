@@ -23,10 +23,10 @@
     --part8-x: 35vw;
     --part8-y: -30vh;
     --part8-z: 16px;
-    --part9-x: 8vw;
-    --part9-y: -95vh;
+    --part9-x: -42vw;
+    --part9-y: -35vh;
     --part9-z: 16px;
-    --part10-x: -2vw;
+    --part10-x: 42vw;
     --part10-y: -20vh;
     --part10-z: 16px;
 }
@@ -34,22 +34,49 @@
 
 .particles-container {
     display: block;
+    position: relative;
 }
+
+.particle {
+    position: absolute;
+    transition: all .8s;
+}
+
+
+.left-bottom {
+    transform: translateX(-15px) translateY(15px) translateZ(-15px);
+}
+
+.right-bottom {
+    transform: translateX(15px) translateY(15px) translateZ(-15px);
+}
+
+.right-top {
+    transform: translateX(15px) translateY(-15px) translateZ(15px);
+}
+
+.left-top {
+    transform: translateX(-15px) translateY(-15px) translateZ(15px);
+}
+
 
 .particle:nth-child(1) {
     border-top-right-radius: 12px;
     border-bottom-left-radius: 12px;
     height: 18px;
     width: 18px;
-    transform: translate3d(var(--part1-x), var( --part1-y), var( --part1-z));
+    top: -56vh;
+    right: -33vw;
     background: #44d7b6;
+
 }
 
 .particle:nth-child(2) {
     border-radius: 50%;
     height: 18px;
     width: 18px;
-    transform: translate3d(var(--part2-x), var( --part2-y), var( --part2-z));
+    top: -32vh;
+    left: -29vw;
     background: #6060d2;
 }
 
@@ -59,7 +86,8 @@
 	border-left: 9px solid transparent;
 	border-right: 9px solid transparent;
 	border-bottom: 18px solid #ffd05c;
-    transform: translate3d(var(--part3-x), var( --part3-y), var( --part3-z)) rotate(180deg);
+    top: 0vh;
+    left: -34vw;
 }
 
 .particle:nth-child(4) {
@@ -67,30 +95,35 @@
     height: 22px;
     border-radius: 50%;
     box-shadow: 2px 8px 0 0 #ec4a5f;
-    transform: translate3d(var(--part4-x), var( --part4-y), var( --part4-z)) rotate(180deg);
+    top: -64vh;
+    left: -22vw;
 }
 
 .particle:nth-child(5) {
     width: 4px;
-    height: 30px;
+    height: 40px;
     border-radius: 8px;
     background: #ffd05c;
-    transform: translate3d(var(--part5-x), var( --part5-y), var( --part5-z)) rotate(30deg);
+    top: -5.4vh;
+    right: -25vw;
+    /* transform: rotate(30deg); */
 }
 
 .particle:nth-child(6) {
     width: 18px;
     height: 18px;
     background: #6060d2;
-    transform: translate3d(var(--part6-x), var( --part6-y), var( --part6-z)) rotate(30deg);
+    top: -46.4vh;
+    right: -21.2vw;
 }
 
 .particle:nth-child(7) {
     width: 4px;
-    height: 30px;
+    height: 32px;
     border-radius: 8px;
     background: #44d7b6;
-    transform: translate3d(var(--part7-x), var( --part7-y), var( --part7-z)) rotate(120deg);
+    top: -18.4vh;
+    right: 19.2vw;
 }
 
 .particle:nth-child(8) {
@@ -98,7 +131,8 @@
     height: 22px;
     border-radius: 50%;
     box-shadow: 2px 8px 0 0 #ec4a5f;
-    transform: translate3d(var(--part8-x), var( --part8-y), var( --part8-z)) rotate(180deg);
+    top: -22vh;
+    right: -39.2vw;
 }
 
 .particle:nth-child(9) {
@@ -106,7 +140,9 @@
     height: 18px;
     border-top-left-radius: 10px;
     background-color: #ffd05c;
-    transform: translate3d(var(--part9-x), var( --part9-y), var( --part9-z)) rotate(140deg);
+    top: -54vh;
+    left: -42vw;
+    /* transform: translate3d(var(--part9-x), var( --part9-y), var( --part9-z)) rotate(140deg); */
 }
 
 .particle:nth-child(10) {
@@ -114,5 +150,6 @@
     height: 18px;
     border-radius: 10px;
     background-color: #44d7b6;
-    transform: translate3d(var(--part10-x), var( --part10-y), var( --part10-z)) rotate(180deg);
+    top: 10vh;
+    right: -31.2vw;
 }
