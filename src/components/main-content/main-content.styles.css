@@ -9,8 +9,8 @@
 
 .main-content-img-frame {
     margin-top: 50px;
-    height: 110px;
-    width: 110px;
+    min-height: 110px;
+    min-width: 110px;
     background-size: cover;
     background-position: -10px 3px;
     background-size: 130px;
@@ -51,7 +51,21 @@
     transform: translateY(-10px);
 }
 
-.button {
+.ripple {
+    background-position: center;
+    transition: background 0.8s;
+  }
+  .ripple:hover {
+    background: #f33a4e radial-gradient(circle, transparent 1%, #f95667 1%) center/15000%;
+  }
+  .ripple:active {
+    background-color: #f33a4e;
+    background-size: 100%;
+    transition: background 0s;
+  }
+
+  
+button {
     padding: 10px 25px;
     border-radius: 30px;
     border: none;
@@ -63,8 +77,11 @@
     font-weight: bold;
 }
 
-.button:hover {
+button:focus {
+    outline: none;
+}
 
+button:hover {
     animation-name: example;
     animation-duration: .3s;
 }

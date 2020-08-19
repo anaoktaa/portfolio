@@ -1,5 +1,6 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+
+import Particles from '../particles/particles.component';
 
 import './main-content.styles.css';
 
@@ -23,7 +24,8 @@ const MainContent = () => {
                     <i class="fab fa-instagram" style={style.socialMediaIcon}></i>
                 </div>
             </div>
-            <button className='button'>Show More</button>
+            <button className='ripple'>Show More</button>
+            <Particles/>
         </main>
     )
 };

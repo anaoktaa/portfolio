@@ -1,0 +1,118 @@
+:root {
+    --part1-x: 39vw;
+    --part1-y: -40vh;
+    --part1-z: 61px;
+    --part2-x: -39vw;
+    --part2-y: -40vh;
+    --part2-z: 8px;
+    --part3-x: -26vw;
+    --part3-y: 8px;
+    --part3-z: 61px;
+    --part4-x: -20vw;
+    --part4-y: -60vh;
+    --part4-z: 8px;
+    --part5-x: 20vw;
+    --part5-y: -20vh;
+    --part5-z: 21px;
+    --part6-x: 22vw;
+    --part6-y: -70vh;
+    --part6-z: 16px;
+    --part7-x: -16vw;
+    --part7-y: -40vh;
+    --part7-z: 16px;
+    --part8-x: 35vw;
+    --part8-y: -30vh;
+    --part8-z: 16px;
+    --part9-x: 8vw;
+    --part9-y: -95vh;
+    --part9-z: 16px;
+    --part10-x: -2vw;
+    --part10-y: -20vh;
+    --part10-z: 16px;
+}
+  
+
+.particles-container {
+    display: block;
+}
+
+.particle:nth-child(1) {
+    border-top-right-radius: 12px;
+    border-bottom-left-radius: 12px;
+    height: 18px;
+    width: 18px;
+    transform: translate3d(var(--part1-x), var( --part1-y), var( --part1-z));
+    background: #44d7b6;
+}
+
+.particle:nth-child(2) {
+    border-radius: 50%;
+    height: 18px;
+    width: 18px;
+    transform: translate3d(var(--part2-x), var( --part2-y), var( --part2-z));
+    background: #6060d2;
+}
+
+.particle:nth-child(3) {
+    width: 0;
+	height: 0;
+	border-left: 9px solid transparent;
+	border-right: 9px solid transparent;
+	border-bottom: 18px solid #ffd05c;
+    transform: translate3d(var(--part3-x), var( --part3-y), var( --part3-z)) rotate(180deg);
+}
+
+.particle:nth-child(4) {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    box-shadow: 2px 8px 0 0 #ec4a5f;
+    transform: translate3d(var(--part4-x), var( --part4-y), var( --part4-z)) rotate(180deg);
+}
+
+.particle:nth-child(5) {
+    width: 4px;
+    height: 30px;
+    border-radius: 8px;
+    background: #ffd05c;
+    transform: translate3d(var(--part5-x), var( --part5-y), var( --part5-z)) rotate(30deg);
+}
+
+.particle:nth-child(6) {
+    width: 18px;
+    height: 18px;
+    background: #6060d2;
+    transform: translate3d(var(--part6-x), var( --part6-y), var( --part6-z)) rotate(30deg);
+}
+
+.particle:nth-child(7) {
+    width: 4px;
+    height: 30px;
+    border-radius: 8px;
+    background: #44d7b6;
+    transform: translate3d(var(--part7-x), var( --part7-y), var( --part7-z)) rotate(120deg);
+}
+
+.particle:nth-child(8) {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    box-shadow: 2px 8px 0 0 #ec4a5f;
+    transform: translate3d(var(--part8-x), var( --part8-y), var( --part8-z)) rotate(180deg);
+}
+
+.particle:nth-child(9) {
+    width: 18px;
+    height: 18px;
+    border-top-left-radius: 10px;
+    background-color: #ffd05c;
+    transform: translate3d(var(--part9-x), var( --part9-y), var( --part9-z)) rotate(140deg);
+}
+
+.particle:nth-child(10) {
+    width: 18px;
+    height: 18px;
+    border-radius: 10px;
+    background-color: #44d7b6;
+    transform: translate3d(var(--part10-x), var( --part10-y), var( --part10-z)) rotate(180deg);
+}
