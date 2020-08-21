@@ -4,6 +4,7 @@ import './App.css';
 
 import MainContent from './components/main-content/main-content.component';
 import Header from './components/header/header.component';
+import About from './components/about/about.component';
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       {/* <Router> */}
         <Header/>
         <MainContent/>
+        <About/>
       {/* </Router> */}
 
     </div>

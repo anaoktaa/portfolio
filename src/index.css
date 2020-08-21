@@ -1,10 +1,6 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: 'Heebo', sans-serif;
 }
 
 code {
@@ -17,9 +13,10 @@ code {
   --secondary-bg-color: #FFD15C;
   --main-txt-color: #fff;
   --main-padding: 50px;
-  --main-horizontal-padding: 50px;
+  --main-horizontal-padding: 150px;
+  --main-horizontal-padding-lg: 60px;
   --main-horizontal-padding-md: 30px;
   --main-horizontal-padding-sm: 15px;
-  --main-vertical-padding: 20px;
+  --main-vertical-padding: 10px;
   --mobile: 600px;
 }

@@ -55,7 +55,7 @@
     width: 600px;
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
 }
 
 .header-menu, .header-menu-dropdown {
@@ -72,6 +72,12 @@
 
 .header-menu-mobile {
     display: none;
+}
+
+@media screen and (max-width: 1024px) {
+    .header-container {
+        padding: 0 var(--main-horizontal-padding-lg);
+    }
 }
 
 @media screen and (max-width: 992px) {
@@ -102,6 +108,4 @@
     .header-container {
         padding: 0 var(--main-horizontal-padding-sm);
     }
-
-
 }

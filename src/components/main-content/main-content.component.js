@@ -19,7 +19,7 @@ const MainContent = ({ actualSize }) => {
     return (
         <section ref={mainContentRef} className='main-content'>
             <div className='main-content-img-frame'/>
-            <p className='main-content-name'>Ana Oktaviana</p>
+            <p className='main-content-title'>Ana Oktaviana</p>
             <p className='main-content-what-i-am'>I'm a Front End Developer</p>
             <div className='main-content-media-social'>
                 <div className='main-content-icon' to='#'>

@@ -1,0 +1,95 @@
+.about-container {
+    text-align: left;
+    padding: var(--main-vertical-padding) var(--main-horizontal-padding);
+}
+
+.about-me {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.about-me-image{
+    margin-top: 50px;
+    min-height: 170px;
+    min-width: 170px;
+    background-size: cover;
+    background-position: -18px 3px;
+    background-size: 210px;
+    border-radius: 50%;
+    background-image: url('../../assets//images/avatar-1.jpg');
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.about-me-detail {
+    padding: 10px 20px;
+    background-color: #302f4e;
+    width: 60vw;
+    border-radius: 20px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.about-me-detail p {
+    line-height: 28px;
+    font-size: 16px;
+}
+
+.about-me-detail-description {
+    width: 48%;
+}
+
+.about-me-detail-skill {
+    width: 48%;
+}
+
+
+@media screen and (max-width: 1024px) {
+    .about-container {
+        padding: var(--main-vertical-padding) var(--main-horizontal-padding-lg);
+    }
+}
+
+
+@media screen and (max-width: 992px) {
+    .about-container {
+        padding: var(--main-vertical-padding) var(--main-horizontal-padding-md);
+    }
+
+    .about-me-detail {
+        width: 63vw;
+    }
+    
+}
+
+@media screen and (max-width: 600px) {
+    .about-container {
+        text-align: center;
+        padding: var(--main-vertical-padding) var(--main-horizontal-padding-sm);
+    }
+
+    .about-me {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .about-me-detail {
+        width: 100%;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 10px 20px;
+    }
+    
+    .about-me-detail-description {
+        width: 100%;
+    }
+
+    .about-me-detail-skill {
+        width: 100%;
+    }
+}
