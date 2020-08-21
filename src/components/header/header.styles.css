@@ -1,20 +1,56 @@
-.header {
+.header-container {
     height: 70px;
     border-bottom: 1px solid #ffffff1a;
-    background-color: var(--main-bg-color);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 var(--main-horizontal-padding);
+    transition: all .8s;
+    overflow: hidden;
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     z-index: 10;
+    background-color: var(--main-bg-color);
+    padding: 0 var(--main-horizontal-padding);
 }
+
+.header {
+    height: 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.dropdown-menus {
+    margin-top: 5px;
+}
+
+.dropdown-menus ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-align: left;
+}
+
+.dropdown-menus li {
+    margin-bottom: 17px;
+    font-size: 12px;
+}
+
 .header-logo {
-    width: 100px;
+    height: 50px;
+    width: 220px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
 }
+
+.logo-container {
+    height: 110px;
+    width: 110px;
+    padding-right: 30px;
+    display: inline-block;
+    margin-left: -3px;
+}
+
 .header-menus {
     width: 600px;
     display: flex;
@@ -22,7 +58,7 @@
     justify-content: space-around;
 }
 
-.header-menu {
+.header-menu, .header-menu-dropdown {
     font-size: 16px;
     color: white;
     text-decoration: none;
@@ -30,6 +66,42 @@
     font-family: 'Heebo', sans-serif;
 }
 
-.header-menu:hover {
+.header-menu:hover, .header-menu-dropdown:hover {
     color: var(--secondary-bg-color);
+}
+
+.header-menu-mobile {
+    display: none;
+}
+
+@media screen and (max-width: 992px) {
+    .logo-container {
+        height: 90px;
+        width: 90px;
+    }
+
+    .header-menu-mobile {
+        display: block;
+    }
+
+    .header-menus {
+        display: none;
+    }
+
+    .header-container {
+        padding: 0 var(--main-horizontal-padding-md);
+    }
+
+    .header-container.show-dropdown {
+        height: 320px;
+    }
+
+}
+
+@media screen and (max-width: 600px) {
+    .header-container {
+        padding: 0 var(--main-horizontal-padding-sm);
+    }
+
+
 }

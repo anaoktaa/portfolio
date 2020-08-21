@@ -39,8 +39,6 @@ const Particles = ({ actualWidth, actualHeight }) => {
 
 
     }, [actualWidth, mousePosition, actualHeight]);
-
-    console.log(mousePosition)
       
     return (
         <div className='particles-container'>

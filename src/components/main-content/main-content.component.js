@@ -17,7 +17,7 @@ const MainContent = ({ actualSize }) => {
     }, [mainContentRef, setActualHeight]);
 
     return (
-        <main ref={mainContentRef} className='main-content'>
+        <section ref={mainContentRef} className='main-content'>
             <div className='main-content-img-frame'/>
             <p className='main-content-name'>Ana Oktaviana</p>
             <p className='main-content-what-i-am'>I'm a Front End Developer</p>
@@ -40,7 +40,7 @@ const MainContent = ({ actualSize }) => {
                 actualHeight={actualHeight}
                 actualWidth={actualSize.width}
             />
-        </main>
+        </section>
     )
 };
 
