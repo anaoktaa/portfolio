@@ -8,15 +8,16 @@
 }
 
 .main-content-img-frame {
-    margin-top: 50px;
-    min-height: 110px;
-    min-width: 110px;
-    background-size: cover;
-    background-position: -10px 3px;
-    background-size: 130px;
+    height: 110px;
+    width: 110px;
     border-radius: 50%;
-    background-image: url('../../assets//images/avatar-2.jpg');
     overflow: hidden;
+    background-color: white;
+    margin-top: 50px;
+}
+
+.main-content-img-frame img {
+    margin-left: -10px;
 }
 
 .main-content-title {
@@ -95,24 +96,5 @@ button:hover {
     }
     100% {
         transform: scale(1);
-    }
-}
-
-
-@media screen and (max-width: 1024px) {
-    .main-content{
-        padding: var(--main-vertical-padding) var(--main-horizontal-padding-lg);
-    }
-}
-
-@media screen and (max-width: 992px) {
-    .main-content {
-        padding: var(--main-vertical-padding) var(--main-horizontal-padding-md);
-    }
-}
-
-@media screen and (max-width: 600px) {
-    .main-content {
-        padding: var(--main-vertical-padding) var(--main-horizontal-padding-sm);
     }
 }

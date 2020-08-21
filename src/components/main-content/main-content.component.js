@@ -1,4 +1,5 @@
 import React, { useRef, useEffect, useState } from 'react';
+import LazyLoad from 'react-lazy-load';
 
 import Particles from '../particles/particles.component';
 import withWindowResize from '../with-window-resize/with-window-resize.component';
@@ -18,7 +19,11 @@ const MainContent = ({ actualSize }) => {
 
     return (
         <section ref={mainContentRef} className='main-content'>
-            <div className='main-content-img-frame'/>
+            <div className='main-content-img-frame'>
+                <LazyLoad>
+                    <img src={'https://i.ibb.co/rdtjnvF/avatar-2.jpg'} alt='avatar-ana' width='120%' height='120%' />
+                </LazyLoad> 
+            </div>
             <p className='main-content-title'>Ana Oktaviana</p>
             <p className='main-content-what-i-am'>I'm a Front End Developer</p>
             <div className='main-content-media-social'>

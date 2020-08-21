@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
-import logo1 from '../../assets/images/logo-1.png';
-
 import './header.styles.css';
 
 const Header = () => {
@@ -18,7 +16,7 @@ const Header = () => {
             <header className='header'>
                 <div className='header-logo'>
                     <div className='logo-container'>
-                        <img src={logo1} alt='ana-logo' width='100%' height='100%'/>
+                        <img src={'https://i.ibb.co/LRDnvLx/logo-1.png'} alt='ana-logo' width='100%' height='100%'/>
                     </div>
                 </div>
                 <div className='header-menus'>

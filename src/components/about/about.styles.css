@@ -7,17 +7,17 @@
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
+    margin-top: 40px;
 }
 
 .about-me-image{
-    margin-top: 50px;
     min-height: 170px;
     min-width: 170px;
     background-size: cover;
     background-position: -18px 3px;
     background-size: 210px;
     border-radius: 50%;
-    background-image: url('../../assets//images/avatar-1.jpg');
+    background-image: url('https://i.ibb.co/dtxKjLd/avatar-1.jpg');
     overflow: hidden;
     margin-bottom: 20px;
 }
@@ -25,49 +25,98 @@
 .about-me-detail {
     padding: 10px 20px;
     background-color: #302f4e;
-    width: 60vw;
+    width: 57vw;
     border-radius: 20px;
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
 }
 
-.about-me-detail p {
+.about-me-detail-description p {
     line-height: 28px;
     font-size: 16px;
 }
 
 .about-me-detail-description {
-    width: 48%;
+    width: 47%;
 }
 
 .about-me-detail-skill {
-    width: 48%;
+    width: 47%;
+}
+
+.skill {
+    padding: 0 0 14px;
+}
+
+.skill-text-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.skill-text {
+    font-size: 15px;
+    font-weight: bold;
+    margin: 5px 0;
+}
+
+.progress-container {
+    width: 100%;
+    height: 6px;
+    border-radius: 4px;
+    background: white;
+    overflow: hidden;
+}
+
+.progress-skill-1{
+    width: 90%;
+    height: 6px;
+    background: #ffd05c;
+}
+
+.progress-skill-2{
+    width: 85%;
+    height: 6px;
+    background: #44d7b6;
+}
+
+.progress-skill-3{
+    width: 80%;
+    height: 6px;
+    background: #f33a4e;
+}
+
+.progress-skill-4{
+    width: 80%;
+    height: 6px;
+    background: #6c6ce5;
 }
 
 
 @media screen and (max-width: 1024px) {
-    .about-container {
-        padding: var(--main-vertical-padding) var(--main-horizontal-padding-lg);
-    }
+    .about-me-detail {
+        width: 62vw;
+    }  
 }
 
-
 @media screen and (max-width: 992px) {
-    .about-container {
-        padding: var(--main-vertical-padding) var(--main-horizontal-padding-md);
-    }
-
     .about-me-detail {
-        width: 63vw;
-    }
-    
+        width: 59vw;
+    }  
 }
 
 @media screen and (max-width: 600px) {
-    .about-container {
+
+    .about-me-detail-description {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 30px;
+    }
+
+    .about-me-detail-description p {
         text-align: center;
-        padding: var(--main-vertical-padding) var(--main-horizontal-padding-sm);
     }
 
     .about-me {

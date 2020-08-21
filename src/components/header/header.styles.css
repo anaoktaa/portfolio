@@ -74,12 +74,6 @@
     display: none;
 }
 
-@media screen and (max-width: 1024px) {
-    .header-container {
-        padding: 0 var(--main-horizontal-padding-lg);
-    }
-}
-
 @media screen and (max-width: 992px) {
     .logo-container {
         height: 90px;
@@ -94,18 +88,8 @@
         display: none;
     }
 
-    .header-container {
-        padding: 0 var(--main-horizontal-padding-md);
-    }
-
     .header-container.show-dropdown {
         height: 320px;
     }
 
-}
-
-@media screen and (max-width: 600px) {
-    .header-container {
-        padding: 0 var(--main-horizontal-padding-sm);
-    }
 }

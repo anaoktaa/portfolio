@@ -14,9 +14,23 @@ code {
   --main-txt-color: #fff;
   --main-padding: 50px;
   --main-horizontal-padding: 150px;
-  --main-horizontal-padding-lg: 60px;
-  --main-horizontal-padding-md: 30px;
-  --main-horizontal-padding-sm: 15px;
   --main-vertical-padding: 10px;
-  --mobile: 600px;
+}
+
+@media screen and (max-width: 1024px) {
+  :root {
+    --main-horizontal-padding: 60px;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  :root {
+    --main-horizontal-padding: 30px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  :root {
+    --main-horizontal-padding: 15px;
+  }
 }
