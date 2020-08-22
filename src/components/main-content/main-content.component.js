@@ -1,13 +1,17 @@
-import React, { useRef, useEffect, useState } from 'react';
+import React, { useRef, useEffect, useState, useContext } from 'react';
 import LazyLoad from 'react-lazy-load';
 
 import Particles from '../particles/particles.component';
 import withWindowResize from '../with-window-resize/with-window-resize.component';
+import Button from '../button/button.component';
+
+import { SystemContext } from '../../provider/system.provider';
 
 import './main-content.styles.css';
 
 const MainContent = ({ actualSize }) => {
     const mainContentRef = useRef(null);
+    const { mode } = useContext(SystemContext);
     const [ actualHeight, setActualHeight ] = useState(null);
 
     useEffect( () => {
@@ -17,6 +21,13 @@ const MainContent = ({ actualSize }) => {
 
     }, [mainContentRef, setActualHeight]);
 
+    const style= {
+        socialMediaIcon: {
+            color: mode === 'light'? '#353353' : 'white',
+            fontSize: '23px',
+        }
+    }
+    
     return (
         <section ref={mainContentRef} className='main-content'>
             <div className='main-content-img-frame'>
@@ -40,7 +51,7 @@ const MainContent = ({ actualSize }) => {
                     <i class="fab fa-instagram" style={style.socialMediaIcon}></i>
                 </div>
             </div>
-            <button className='ripple'>Show More</button>
+            <Button>Show More</Button>
             <Particles
                 actualHeight={actualHeight}
                 actualWidth={actualSize.width}
@@ -48,12 +59,5 @@ const MainContent = ({ actualSize }) => {
         </section>
     )
 };
-
-const style= {
-    socialMediaIcon: {
-        color: 'white',
-        fontSize: '23px',
-    }
-}
 
 export default withWindowResize(MainContent);

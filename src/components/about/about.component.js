@@ -1,6 +1,8 @@
 import React from 'react';
 import LazyLoad from 'react-lazy-load';
 
+import Button from '../button/button.component';
+
 import './about.styles.css';
 
 const About = () => {
@@ -18,7 +20,7 @@ const About = () => {
                             I love to make an attractive UI and efficient
                             code. Always seeking to developing and sharpen my skillsets.
                         </p>
-                        <button className='ripple'>Download CV</button>
+                        <Button>Download CV</Button>
                     </div>
                     <div className='about-me-detail-skill'>
                         <div className='skill'>

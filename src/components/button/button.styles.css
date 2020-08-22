@@ -1,0 +1,34 @@
+.ripple {
+    background-position: center;
+    transition: background 0.8s;
+  }
+  .ripple:hover {
+    background: #f33a4e radial-gradient(circle, transparent 1%, #f95667 1%) center/15000%;
+  }
+  .ripple:active {
+    background-color: #f33a4e;
+    background-size: 100%;
+    transition: background 0s;
+  }
+
+  
+button {
+    padding: 10px 25px;
+    border-radius: 30px;
+    border: none;
+    color: white;
+    background-color: #f33a4e;
+    font-family: 'Heebo', sans-serif;
+    font-size: 16px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+button:focus {
+    outline: none;
+}
+
+button:hover {
+    animation-name: example;
+    animation-duration: .3s;
+}

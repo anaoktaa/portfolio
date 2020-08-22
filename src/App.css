@@ -2,6 +2,7 @@
   text-align: center;
   background-color: var(--main-bg-color);
   color: var(--main-txt-color);
+  padding-bottom: 50px;
 }
 
 .App-logo {
@@ -43,6 +44,8 @@
   --main-bg-color: #f9f9ff;
   --secondary-bg-color: #FFD15C;
   --main-txt-color: #353353;
+  --shadow: #cecece8c;
+  --basic-color: #fff;
   --main-padding: 50px;
   --main-horizontal-padding: 150px;
   --main-vertical-padding: 10px;
@@ -50,6 +53,8 @@
 [data-theme='dark'] {
   --main-bg-color: #353353;
   --secondary-bg-color: #FFD15C;
+  --basic-color: #302f4e;
+  --shadow: #353353;
   --main-txt-color: #fff;
   --main-padding: 50px;
   --main-horizontal-padding: 150px;
@@ -60,16 +65,25 @@
   :root {
     --main-horizontal-padding: 60px;
   }
+  [data-theme='dark'] {
+    --main-horizontal-padding: 60px;
+  }
 }
 
 @media screen and (max-width: 992px) {
   :root {
     --main-horizontal-padding: 30px;
   }
+  [data-theme='dark'] {
+    --main-horizontal-padding: 30px;
+  }
 }
 
 @media screen and (max-width: 600px) {
   :root {
+    --main-horizontal-padding: 15px;
+  }
+  [data-theme='dark'] {
     --main-horizontal-padding: 15px;
   }
 }
