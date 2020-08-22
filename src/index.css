@@ -8,29 +8,3 @@ code {
     monospace;
 }
 
-:root {
-  --main-bg-color: #353353;
-  --secondary-bg-color: #FFD15C;
-  --main-txt-color: #fff;
-  --main-padding: 50px;
-  --main-horizontal-padding: 150px;
-  --main-vertical-padding: 10px;
-}
-
-@media screen and (max-width: 1024px) {
-  :root {
-    --main-horizontal-padding: 60px;
-  }
-}
-
-@media screen and (max-width: 992px) {
-  :root {
-    --main-horizontal-padding: 30px;
-  }
-}
-
-@media screen and (max-width: 600px) {
-  :root {
-    --main-horizontal-padding: 15px;
-  }
-}

@@ -5,12 +5,17 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
+import SystemProvider from './provider/system.provider';
+
 ReactDOM.render(
-  <React.StrictMode>
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
-  </React.StrictMode>,
+  <SystemProvider>
+    <React.StrictMode>
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+    </React.StrictMode>
+  </SystemProvider>
+,
   document.getElementById('root')
 );
 
