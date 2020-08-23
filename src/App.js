@@ -7,6 +7,7 @@ import MainContent from './components/main-content/main-content.component';
 import Header from './components/header/header.component';
 
 const About = lazy(() => import('./components/about/about.component'));
+const Experiences = lazy(() => import('./components/experiences/experiences.component'));
 
 const App = () => {
   const { mode } = useContext(SystemContext);
@@ -16,6 +17,7 @@ const App = () => {
       <MainContent/>
         <Suspense fallback={<div/>}>
           <About/>
+          <Experiences/>
       </Suspense>
     </div>
   )

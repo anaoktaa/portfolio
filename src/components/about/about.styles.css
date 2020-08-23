@@ -70,27 +70,27 @@
     overflow: hidden;
 }
 
+.progress-skill-1, .progress-skill-2, .progress-skill-3, .progress-skill-4 {
+    height: 6px;
+}
+
 .progress-skill-1{
     width: 90%;
-    height: 6px;
     background: #ffd05c;
 }
 
 .progress-skill-2{
     width: 85%;
-    height: 6px;
     background: #44d7b6;
 }
 
 .progress-skill-3{
     width: 80%;
-    height: 6px;
     background: #f33a4e;
 }
 
 .progress-skill-4{
-    width: 80%;
-    height: 6px;
+    width: 70%;
     background: #6c6ce5;
 }
 

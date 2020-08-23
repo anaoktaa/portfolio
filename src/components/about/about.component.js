@@ -53,7 +53,7 @@ const About = () => {
                         <div className='skill'>
                             <div className='skill-text-container'>
                                 <p className='skill-text'>Git / Github</p>
-                                <p className='skill-text'>80%</p>
+                                <p className='skill-text'>70%</p>
                             </div>
                             <div className='progress-container'>
                                 <div className='progress-skill-4'></div>
