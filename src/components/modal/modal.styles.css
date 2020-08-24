@@ -1,0 +1,60 @@
+.modal-container {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 12000;
+    background-color: #3c3c3cd4;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transform: scale(0);
+    opacity: 0;
+    visibility: hidden;
+    transition: .3s;
+}
+
+.show-modal {
+    transform: scale(1);
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-close {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+}
+
+.modal-content {
+    background-color: white;
+    width: 50%;
+    border-radius: 20px;
+    padding: 30px 40px;
+    color: #353353;
+}
+
+.modal-image {
+    width: 100%;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-image img {
+    object-fit: cover;
+}
+
+@media screen and (max-width: 600px) {
+    .modal-image {
+        display: none;
+    }
+
+    .modal-content {
+        width: 70%;
+    }
+}

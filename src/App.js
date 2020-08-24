@@ -16,7 +16,7 @@ const App = () => {
     <div data-theme={mode} className="App">
       <Header/>
       <MainContent/>
-        <Suspense fallback={<div/>}>
+        <Suspense fallback={<div>Ini looooo</div>}>
           <About/>
           <Experiences/>
           <Works/>
