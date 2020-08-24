@@ -34,7 +34,7 @@ const Experiences = () => {
         {
             id: 1,
             year: '2016',
-            title: 'WEB PROGRAMMER (INTERNSHIP) - Lembaga Ilmu Pengetahuan Indonesia (LIPI)',
+            title: 'Web Programmer - Lembaga Ilmu Pengetahuan Indonesia (LIPI)',
             desc: 'Build a web for monitoring system such as monitoring weather, rainfall, humidity, high surface water and wind velocity',
             tech: ['HTML', 'CSS', 'PHP', 'MySQL']
         },
@@ -53,7 +53,7 @@ const Experiences = () => {
         }
     }
     return (
-        <div className='experiences-container'>
+        <section className='experiences-container'>
             <p className='main-content-title'>Experiences</p>
             <div className='experiences-sub-container'>
                 <div className='experiences-sub'>
@@ -61,7 +61,9 @@ const Experiences = () => {
                         educationList.map(({ id, year, title, desc }) => (
                             <div key={id} className='experience-main'>
                                 <div className='exp-progress'>
-                                    <i class="fas fa-graduation-cap" style={styleIcon.icon}></i>
+                                    <div className='exp-icon'>
+                                        <i class="fas fa-graduation-cap" style={styleIcon.icon}></i>
+                                    </div>
                                     <div className='vertical-line'></div>
                                 </div>
                                 <div className='exp-description'>
@@ -79,7 +81,9 @@ const Experiences = () => {
                         workList.map(({ id, year, title, desc, tech }) => (
                             <div key={id} className='experience-main'>
                                 <div className='exp-progress'>
-                                    <i class="fas fa-briefcase" style={styleIcon.icon}></i>
+                                    <div className='exp-icon'>
+                                        <i class="fas fa-briefcase" style={styleIcon.icon}></i>
+                                    </div>
                                     <div className='vertical-line'></div>
                                 </div>
                                 <div className='exp-description'>
@@ -100,7 +104,7 @@ const Experiences = () => {
                     }
                 </div>
             </div>
-        </div>
+        </section>
     )
 };
 

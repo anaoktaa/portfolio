@@ -21,16 +21,26 @@
 
 .experience-main {
     display: flex;
-    align-items: flex-start;
     justify-content: space-between;
     margin-bottom: 5px;
+    height: auto;
 }
 
+.exp-icon {
+    position: absolute;
+    margin: 0 auto;
+    width: 30px;
+    height: 20px;
+    overflow: hidden;
+    text-align: center;
+    background-color: var(--basic-color);
+}
 .exp-progress {
     width: 10%;
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    height: auto;
+    justify-content: center;
+    position: relative;
 }
 
 .exp-description {
@@ -62,7 +72,7 @@
 }
 
 .vertical-line {
-    height: 120px;
+    /* height: 120px; */
     width: 2px;
     background-color: #f33a4e;
 }
@@ -87,6 +97,10 @@
 @media screen and (max-width: 992px) {
     .experiences-container {
         margin-top: 40px;
+    }
+
+    .experiences-sub {
+        width: 43%;
     }
 }
 
