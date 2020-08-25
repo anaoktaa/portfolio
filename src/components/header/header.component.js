@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, useEffect, useCallback } from 'react';
 import { Link } from 'react-router-dom';
 
 import { SystemContext } from '../../provider/system.provider';
@@ -10,10 +10,52 @@ import './header.styles.css';
 const Header = () => {
 
     const [ dropdownMenu, setDropdownMenu ] = useState(false); 
-    const { mode } = useContext(SystemContext);
+    const [ menuActive, setMenuActive ] = useState(null);
+    const { mode, about, works, experiences, main, mainTopOffset, 
+            aboutTopOffset, worksTopOffset, experiencesTopOffset } = useContext(SystemContext);
 
     const handleShowMenu = () => {
         setDropdownMenu(!dropdownMenu);
+    }
+
+    const handleScroll = useCallback(
+        () => {
+            const lastScroll = window.scrollY;
+           if (main && works && experiences && about) {
+                if (lastScroll >= 0 && lastScroll < main) {
+                    setMenuActive('main');
+                }
+                else if (lastScroll >= main && lastScroll < main+about) {
+                    setMenuActive('about');
+                }
+                else if (lastScroll >= main+about && lastScroll < main+about+experiences) {
+                    setMenuActive('experiences');
+                }
+                else if (lastScroll >= main+about+experiences)  {
+                    setMenuActive('works');
+                }
+           }
+
+        }, [main, works, about, experiences]);
+  
+    useEffect(() => {
+  
+      window.addEventListener('scroll', handleScroll, { passive: true });
+      return () => window.removeEventListener('scroll', handleScroll);
+  
+    }, [handleScroll]);
+
+    useEffect(() => {
+        handleScroll();
+    }, [handleScroll]);
+
+    const handleScrollTo = (item, ref) => {
+        window.scroll({
+            top:  item - 70,
+            left: 0,
+            behavior: 'smooth'
+        });
+        setMenuActive(ref);
     }
 
     return (
@@ -25,11 +67,11 @@ const Header = () => {
                     </div>
                 </div>
                 <div className='header-menus'>
-                    <Link className='header-menu' to='/'>Home</Link>
-                    <Link className='header-menu' to='#'>About</Link>
-                    <Link className='header-menu' to='#'>Experiences</Link>
-                    <Link className='header-menu' to='#'>Works</Link>
-                    <Link className='header-menu' to='#'>Contact</Link>
+                    <Link onClick={() => handleScrollTo(mainTopOffset, 'main')} className={`${menuActive === 'main'? 'active' : ''} header-menu`} to='#'>Home</Link>
+                    <Link onClick={() => handleScrollTo(aboutTopOffset, 'about')} className={`${menuActive === 'about'? 'active' : ''} header-menu`} to='#'>About</Link>
+                    <Link onClick={() => handleScrollTo(experiencesTopOffset, 'experiences')} className={`${menuActive === 'experiences'? 'active' : ''} header-menu`} to='#'>Experiences</Link>
+                    <Link onClick={() => handleScrollTo(worksTopOffset, 'works')} className={`${menuActive === 'works'? 'active' : ''} header-menu`} to='#'>Works</Link>
+                    <Link onClick={() => handleScrollTo()} className={`${menuActive === ''? '' : ''} header-menu`} to='#'>Contact</Link>
                     <Switch/>
                 </div>
                 <div className='header-menu-mobile'>
@@ -38,11 +80,11 @@ const Header = () => {
             </header>
             <div className='dropdown-menus'>
                 <ul>
-                    <li><Link className='header-menu-dropdown' to='#'>Home</Link></li>
-                    <li><Link className='header-menu-dropdown' to='#'>About</Link></li>
-                    <li><Link className='header-menu-dropdown' to='#'>Experiences</Link></li>
-                    <li><Link className='header-menu-dropdown' to='#'>Works</Link></li>
-                    <li><Link className='header-menu-dropdown' to='#'>Contact</Link></li>
+                    <li><Link onClick={() => handleScrollTo(mainTopOffset, 'main')} className={`${menuActive === 'main'? 'active' : ''} header-menu-dropdown`} to='#'>Home</Link></li>
+                    <li><Link onClick={() => handleScrollTo(aboutTopOffset, 'about')} className={`${menuActive === 'about'? 'active' : ''} header-menu-dropdown`} to='#'>About</Link></li>
+                    <li><Link onClick={() => handleScrollTo(experiencesTopOffset, 'experiences')} className={`${menuActive === 'experiences'? 'active' : ''} header-menu-dropdown`} to='#'>Experiences</Link></li>
+                    <li><Link onClick={() => handleScrollTo(worksTopOffset, 'works')} className={`${menuActive === 'works'? 'active' : ''} header-menu-dropdown`} to='#'>Works</Link></li>
+                    <li><Link className={`${menuActive === ''? 'active' : ''} header-menu-dropdown`} to='#'>Contact</Link></li>
                 </ul>
                 <Switch/>
             </div>

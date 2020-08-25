@@ -64,10 +64,15 @@
     text-decoration: none;
     font-weight: 600;
     font-family: 'Heebo', sans-serif;
+    transition: .5s;
+}
+
+.header-menu.active, .header-menu-dropdown.active {
+    color: var(--secondary-bg-color);
 }
 
 .header-menu:hover, .header-menu-dropdown:hover {
-    color: var(--secondary-bg-color);
+    color: #a7a7a7;
 }
 
 .header-menu-mobile {

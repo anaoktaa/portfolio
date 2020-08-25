@@ -1,8 +1,25 @@
-import React from 'react';
+import React, { useRef, useContext, useEffect, useCallback } from 'react';
+
+import { SystemContext } from '../../provider/system.provider';
 
 import './experiences.styles.css';
 
 const Experiences = () => {
+    const experiencesContentRef = useRef(null);
+    const { setExperiences, setExperiencesTopOffset } = useContext(SystemContext);
+
+    const initialRef = useCallback(() => {
+
+        if(experiencesContentRef.current){
+            setExperiences(experiencesContentRef.current.offsetHeight);
+            setExperiencesTopOffset(experiencesContentRef.current.offsetTop)
+        }
+    }, [setExperiences, setExperiencesTopOffset]);
+
+    useEffect(() => {
+        initialRef();
+    }, [initialRef]);
+ 
     const educationList = [
         {
             id: 1,
@@ -32,14 +49,14 @@ const Experiences = () => {
 
     const workList = [
         {
-            id: 1,
+            id: 5,
             year: '2016',
             title: 'Web Programmer - Lembaga Ilmu Pengetahuan Indonesia (LIPI)',
             desc: 'Build a web for monitoring system such as monitoring weather, rainfall, humidity, high surface water and wind velocity',
             tech: ['HTML', 'CSS', 'PHP', 'MySQL']
         },
         {
-            id: 2,
+            id: 6,
             year: '2018 - Present',
             title: 'Software Engineer - Voltras International',
             desc: 'Responsible for developing, testing and integrating some projects such as VXN (Courier Project), backoffice system, koperasi and health product in VAN.',
@@ -53,7 +70,7 @@ const Experiences = () => {
         }
     }
     return (
-        <section className='experiences-container'>
+        <section ref={experiencesContentRef} className='experiences-container'>
             <p className='main-content-title'>Experiences</p>
             <div className='experiences-sub-container'>
                 <div className='experiences-sub'>
@@ -93,7 +110,7 @@ const Experiences = () => {
                                     <div className='tech-stack-container'>
                                         {
                                             tech.map((techStack) => (
-                                                <div className='tech-stack'>#{techStack}</div>
+                                                <div key={techStack} className='tech-stack'>#{techStack}</div>
                                             ))
                                         }
                                     </div>

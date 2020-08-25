@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useState, useContext } from 'react';
+import React, { useRef, useEffect, useState, useContext, useCallback } from 'react';
 import LazyLoad from 'react-lazy-load';
 
 import Particles from '../particles/particles.component';
@@ -11,15 +11,21 @@ import './main-content.styles.css';
 
 const MainContent = ({ actualSize }) => {
     const mainContentRef = useRef(null);
-    const { mode } = useContext(SystemContext);
+    const { mode, setMain, setMainTopOffset } = useContext(SystemContext);
     const [ actualHeight, setActualHeight ] = useState(null);
 
-    useEffect( () => {
+    const initialRef = useCallback(() => {
+      
         if(mainContentRef.current){
+            setMain(mainContentRef.current.offsetHeight);
+            setMainTopOffset(mainContentRef.current.offsetTop)
             setActualHeight(mainContentRef.current.offsetHeight);
         }
+    }, [setMain, setActualHeight, setMainTopOffset]);
 
-    }, [mainContentRef, setActualHeight]);
+    useEffect(() => {
+        initialRef();
+    }, [initialRef]);
 
     const style= {
         socialMediaIcon: {

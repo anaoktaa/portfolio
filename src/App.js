@@ -12,11 +12,12 @@ const Works = lazy(() => import('./components/works/works.component'));
 
 const App = () => {
   const { mode } = useContext(SystemContext);
+
   return (
     <div data-theme={mode} className="App">
       <Header/>
       <MainContent/>
-        <Suspense fallback={<div>Ini looooo</div>}>
+        <Suspense fallback={<div/>}>
           <About/>
           <Experiences/>
           <Works/>

@@ -1,13 +1,29 @@
-import React from 'react';
+import React, { useRef, useEffect, useContext, useCallback } from 'react';
 import LazyLoad from 'react-lazy-load';
 
 import Button from '../button/button.component';
+import { SystemContext } from '../../provider/system.provider';
 
 import './about.styles.css';
 
 const About = () => {
+    const aboutContentRef = useRef(null);
+    const { setAbout, setAboutTopOffset } = useContext(SystemContext);
+
+    const initialRef = useCallback(() => {
+
+        if(aboutContentRef.current){
+            setAbout(aboutContentRef.current.offsetHeight);
+            setAboutTopOffset(aboutContentRef.current.offsetTop)
+        }
+    }, [setAbout, setAboutTopOffset]);
+
+    useEffect(() => {
+        initialRef();
+    }, [initialRef]);
+
     return (
-        <section className='about-container'>
+        <section ref={aboutContentRef} className='about-container'>
             <p className='main-content-title'>About</p>
             <div className='about-me'>
                 <LazyLoad>

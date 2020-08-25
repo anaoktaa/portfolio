@@ -43,7 +43,7 @@ const Particles = ({ actualWidth, actualHeight }) => {
     return (
         <div className='particles-container'>
             {Array(10).fill(1).map((el, i) =>
-               <div className={`${mousePosition.x === 'left' && mousePosition.y === 'bottom' ? 'left-bottom' :
+               <div key={i} className={`${mousePosition.x === 'left' && mousePosition.y === 'bottom' ? 'left-bottom' :
                     mousePosition.x === 'left' && mousePosition.y === 'top'? 'left-top': 
                     mousePosition.x === 'right' && mousePosition.y === 'bottom'? 'right-bottom': 'right-top'
                 } particle`}/>
