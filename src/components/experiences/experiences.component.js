@@ -6,20 +6,29 @@ import './experiences.styles.css';
 
 const Experiences = () => {
     const experiencesContentRef = useRef(null);
-    const { setExperiences, setExperiencesTopOffset } = useContext(SystemContext);
+    const { setExperiences, setExperiencesTopOffset, experiences } = useContext(SystemContext);
 
     const initialRef = useCallback(() => {
-
-        if(experiencesContentRef.current){
-            setExperiences(experiencesContentRef.current.offsetHeight);
-            setExperiencesTopOffset(experiencesContentRef.current.offsetTop)
+        if (!experiences || experiences === 0) {
+            if(experiencesContentRef.current){
+                setExperiences(experiencesContentRef.current.offsetHeight);
+                setExperiencesTopOffset(experiencesContentRef.current.offsetTop)
+            }
         }
-    }, [setExperiences, setExperiencesTopOffset]);
+       
+    }, [experiences, setExperiences, setExperiencesTopOffset]);
 
     useEffect(() => {
         initialRef();
     }, [initialRef]);
  
+    useEffect(() => {
+  
+        window.addEventListener('scroll', initialRef, { passive: true });
+        return () => window.removeEventListener('scroll', initialRef);
+    
+    }, [initialRef]);
+
     const educationList = [
         {
             id: 1,

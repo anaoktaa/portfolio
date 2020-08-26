@@ -7,10 +7,12 @@ export const SystemContext = createContext({
     about: null,
     experiences: null,
     works: null,
+    contact: null,
     mainTopOffset : null,
     aboutTopOffset: null,
     experiencesTopOffset: null,
     worksTopOffset: null,
+    contactTopOffset: null,
     setMode: () => {},
     setAbout: () => {},
     setMain: () => {},
@@ -20,6 +22,8 @@ export const SystemContext = createContext({
     setMainTopOffset: () => {},
     setExperiencesTopOffset: () => {},
     setWorksTopOffset: () => {},
+    setContact: () => {},
+    setContactTopOffset: () => {}
 });
 
 const SystemProvider = ({ children }) => {
@@ -28,12 +32,18 @@ const SystemProvider = ({ children }) => {
     const [ about, setAboutRef ] = useState(null);  
     const [ works, setWorksRef ] = useState(null);  
     const [ experiences, setExperiencesRef ] = useState(null);  
+    const [ contact, setContactRef ] = useState(null);
 
     const [ mainTopOffset, setMainTop ] = useState(null); 
     const [ aboutTopOffset, setAboutTop ] = useState(null); 
     const [ experiencesTopOffset, setExperiencesTop ] = useState(null); 
     const [ worksTopOffset, setWorksTop ] = useState(null); 
+    const [ contactTopOffset, setContactTop ] = useState(null);
 
+ 
+    const setContactTopOffset = (value) => {
+        setContactTop(value);
+    }
    
     const setMainTopOffset = (value) => {
         setMainTop(value);
@@ -67,6 +77,10 @@ const SystemProvider = ({ children }) => {
         setExperiencesRef(value);
     }
 
+    const setContact = (value) => {
+        setContactRef(value);
+    }
+
     const setMode = () => {
         if (mode === 'dark') {
             setModeBackground('light');
@@ -86,6 +100,10 @@ const SystemProvider = ({ children }) => {
                 about,
                 setAbout,
                 works,
+                contact,
+                contactTopOffset,
+                setContact,
+                setContactTopOffset,
                 setWorks,
                 experiences,
                 setExperiences,

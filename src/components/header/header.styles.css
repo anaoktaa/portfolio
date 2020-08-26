@@ -71,6 +71,10 @@
     color: var(--secondary-bg-color);
 }
 
+.header-menu.active:hover, .header-menu-dropdown.active:hover {
+    color: var(--secondary-bg-color);
+}
+
 .header-menu:hover, .header-menu-dropdown:hover {
     color: #a7a7a7;
 }

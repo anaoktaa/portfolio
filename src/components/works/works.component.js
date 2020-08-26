@@ -26,19 +26,27 @@ const Works = () => {
         setOpenModal(!openModal);
     }
     const worksContentRef = useRef(null);
-    const { setWorks, setWorksTopOffset } = useContext(SystemContext);
+    const { setWorks, setWorksTopOffset, works } = useContext(SystemContext);
 
     const initialRef = useCallback(() => {
-
-        if(worksContentRef.current){
-            setWorks(worksContentRef.current.offsetHeight);
-            setWorksTopOffset(worksContentRef.current.offsetTop)
-        }
-    }, [setWorks, setWorksTopOffset]);
+       if (!works || works === 0) {
+            if(worksContentRef.current){
+                setWorks(worksContentRef.current.offsetHeight);
+                setWorksTopOffset(worksContentRef.current.offsetTop)
+            }
+       }
+    }, [setWorks, setWorksTopOffset, works]);
 
     useEffect(() => {
         initialRef();
     }, [initialRef]);
+
+    useEffect(() => {
+  
+        window.addEventListener('scroll', initialRef, { passive: true });
+        return () => window.removeEventListener('scroll', initialRef);
+    
+      }, [initialRef]);
 
     const workList = [
         {
@@ -79,7 +87,7 @@ const Works = () => {
     ]
     
     return  (
-        <section ref={worksContentRef} className='experiences-container'>
+        <div ref={worksContentRef} className='experiences-container'>
             <p className='main-content-title'>Recent Work</p>
             <div className='works-sub-container'>
                 {
@@ -121,7 +129,7 @@ const Works = () => {
                         : null
                 }
             </Suspense>
-        </section>
+        </div>
     )
 };
 

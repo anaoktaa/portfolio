@@ -11,20 +11,29 @@ import './main-content.styles.css';
 
 const MainContent = ({ actualSize }) => {
     const mainContentRef = useRef(null);
-    const { mode, setMain, setMainTopOffset } = useContext(SystemContext);
+    const { mode, setMain, setMainTopOffset, main } = useContext(SystemContext);
     const [ actualHeight, setActualHeight ] = useState(null);
 
     const initialRef = useCallback(() => {
-      
-        if(mainContentRef.current){
-            setMain(mainContentRef.current.offsetHeight);
-            setMainTopOffset(mainContentRef.current.offsetTop)
-            setActualHeight(mainContentRef.current.offsetHeight);
+        if (!main || main === 0) {
+            if(mainContentRef.current){
+                setMain(mainContentRef.current.offsetHeight);
+                setMainTopOffset(mainContentRef.current.offsetTop)
+                setActualHeight(mainContentRef.current.offsetHeight);
+            }
         }
-    }, [setMain, setActualHeight, setMainTopOffset]);
+    
+    }, [setMain, setActualHeight, setMainTopOffset, main]);
 
     useEffect(() => {
         initialRef();
+    }, [initialRef]);
+
+    useEffect(() => {
+  
+        window.addEventListener('scroll', initialRef, { passive: true });
+        return () => window.removeEventListener('scroll', initialRef);
+    
     }, [initialRef]);
 
     const style= {

@@ -8,18 +8,29 @@ import './about.styles.css';
 
 const About = () => {
     const aboutContentRef = useRef(null);
-    const { setAbout, setAboutTopOffset } = useContext(SystemContext);
+    const { setAbout, setAboutTopOffset, about } = useContext(SystemContext);
 
     const initialRef = useCallback(() => {
-
-        if(aboutContentRef.current){
-            setAbout(aboutContentRef.current.offsetHeight);
-            setAboutTopOffset(aboutContentRef.current.offsetTop)
+        if (!about || about === 0) { 
+            if(aboutContentRef.current){
+                setAbout(aboutContentRef.current.offsetHeight);
+                setAboutTopOffset(aboutContentRef.current.offsetTop)
+            }
         }
-    }, [setAbout, setAboutTopOffset]);
+       
+    }, [setAbout, setAboutTopOffset, about]);
+
+    console.log(useContext(SystemContext))
 
     useEffect(() => {
         initialRef();
+    }, [initialRef]);
+
+    useEffect(() => {
+  
+        window.addEventListener('scroll', initialRef, { passive: true });
+        return () => window.removeEventListener('scroll', initialRef);
+    
     }, [initialRef]);
 
     return (

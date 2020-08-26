@@ -1,0 +1,44 @@
+.contact-container {
+    margin-top: 80px;
+    text-align: center;
+    padding: var(--main-vertical-padding) var(--main-horizontal-padding);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contact-main {
+    box-shadow: 2px 2px 12px var(--shadow);
+    padding: 10px 20px;
+    background-color: var(--basic-color);
+    border-radius: 20px;
+    margin-top: 30px;
+    width: 60%;
+    box-sizing: border-box;
+}
+
+.about-detail {
+    line-height: 23px;
+}
+
+.about-detail a {
+    color: #f33a4e;
+    text-decoration: none;
+}
+
+.about-medsoc-detail {
+    margin-top: 50px;
+}
+
+.about-medsoc-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media screen and (max-width: 600px) {
+    .contact-main {
+        width: 100%;
+    }
+    
+}

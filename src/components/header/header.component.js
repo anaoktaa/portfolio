@@ -12,7 +12,8 @@ const Header = () => {
     const [ dropdownMenu, setDropdownMenu ] = useState(false); 
     const [ menuActive, setMenuActive ] = useState(null);
     const { mode, about, works, experiences, main, mainTopOffset, 
-            aboutTopOffset, worksTopOffset, experiencesTopOffset } = useContext(SystemContext);
+            aboutTopOffset, worksTopOffset, experiencesTopOffset,
+            contactTopOffset } = useContext(SystemContext);
 
     const handleShowMenu = () => {
         setDropdownMenu(!dropdownMenu);
@@ -31,13 +32,15 @@ const Header = () => {
                 else if (lastScroll >= main+about && lastScroll < main+about+experiences) {
                     setMenuActive('experiences');
                 }
-                else if (lastScroll >= main+about+experiences)  {
+                else if (lastScroll >= main+about+experiences && lastScroll < main+about+experiences+works)  {
                     setMenuActive('works');
+                }
+                else if (lastScroll >= main+about+experiences+works){
+                    setMenuActive('contact')
                 }
            }
 
         }, [main, works, about, experiences]);
-  
     useEffect(() => {
   
       window.addEventListener('scroll', handleScroll, { passive: true });
@@ -71,7 +74,7 @@ const Header = () => {
                     <Link onClick={() => handleScrollTo(aboutTopOffset, 'about')} className={`${menuActive === 'about'? 'active' : ''} header-menu`} to='#'>About</Link>
                     <Link onClick={() => handleScrollTo(experiencesTopOffset, 'experiences')} className={`${menuActive === 'experiences'? 'active' : ''} header-menu`} to='#'>Experiences</Link>
                     <Link onClick={() => handleScrollTo(worksTopOffset, 'works')} className={`${menuActive === 'works'? 'active' : ''} header-menu`} to='#'>Works</Link>
-                    <Link onClick={() => handleScrollTo()} className={`${menuActive === ''? '' : ''} header-menu`} to='#'>Contact</Link>
+                    <Link onClick={() => handleScrollTo(contactTopOffset, 'contact')} className={`${menuActive === 'contact'? 'active' : ''} header-menu`} to='#'>Contact</Link>
                     <Switch/>
                 </div>
                 <div className='header-menu-mobile'>
@@ -84,7 +87,7 @@ const Header = () => {
                     <li><Link onClick={() => handleScrollTo(aboutTopOffset, 'about')} className={`${menuActive === 'about'? 'active' : ''} header-menu-dropdown`} to='#'>About</Link></li>
                     <li><Link onClick={() => handleScrollTo(experiencesTopOffset, 'experiences')} className={`${menuActive === 'experiences'? 'active' : ''} header-menu-dropdown`} to='#'>Experiences</Link></li>
                     <li><Link onClick={() => handleScrollTo(worksTopOffset, 'works')} className={`${menuActive === 'works'? 'active' : ''} header-menu-dropdown`} to='#'>Works</Link></li>
-                    <li><Link className={`${menuActive === ''? 'active' : ''} header-menu-dropdown`} to='#'>Contact</Link></li>
+                    <li><Link onClick={() => handleScrollTo(contactTopOffset, 'contact')} className={`${menuActive === 'contact'? 'active' : ''} header-menu-dropdown`} to='#'>Contact</Link></li>
                 </ul>
                 <Switch/>
             </div>
