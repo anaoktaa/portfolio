@@ -68,7 +68,7 @@ const Experiences = () => {
             id: 6,
             year: '2018 - Present',
             title: 'Software Engineer - Voltras International',
-            desc: 'Responsible for developing, testing and integrating some projects such as VXN (Courier Project), backoffice system, koperasi and health product in VAN.',
+            desc: 'Responsible for developing, testing and integrating some projects and features such as VXN (courier services), backoffice system, SAMOLNAS (Samsat Online Nasional) and health product in VAN',
             tech: ['HTML', 'CSS', 'Bootstrap', 'Material-UI', 'React', 'Redux']
         },
     ]

@@ -2,7 +2,7 @@ import React from 'react';
 
 import './button.styles.css';
 
-const Button = ({ props, children }) => {
+const Button = ({ children, ...props }) => {
     return (
         <button className='ripple' {...props}>
             {children}

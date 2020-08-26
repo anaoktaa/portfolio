@@ -46,6 +46,7 @@
     transition: all .5s;
     cursor: pointer;
     transform: translateY(0);
+    color: var(--main-txt-color);
 }
 
 .main-content-icon:hover {

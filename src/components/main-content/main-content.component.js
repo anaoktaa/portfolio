@@ -11,7 +11,7 @@ import './main-content.styles.css';
 
 const MainContent = ({ actualSize }) => {
     const mainContentRef = useRef(null);
-    const { mode, setMain, setMainTopOffset, main } = useContext(SystemContext);
+    const { mode, setMain, setMainTopOffset, main, contactTopOffset } = useContext(SystemContext);
     const [ actualHeight, setActualHeight ] = useState(null);
 
     const initialRef = useCallback(() => {
@@ -36,6 +36,14 @@ const MainContent = ({ actualSize }) => {
     
     }, [initialRef]);
 
+    const handleContact = () => {
+        window.scroll({
+            top:  contactTopOffset - 70,
+            left: 0,
+            behavior: 'smooth'
+        });
+    }
+
     const style= {
         socialMediaIcon: {
             color: mode === 'light'? '#353353' : 'white',
@@ -53,20 +61,20 @@ const MainContent = ({ actualSize }) => {
             <p className='main-content-title'>Ana Oktaviana</p>
             <p className='main-content-what-i-am'>I'm a Front End Developer</p>
             <div className='main-content-media-social'>
-                <div className='main-content-icon' to='#'>
+                <a href="https://github.com/anaoktaa" className='main-content-icon' target="_blank" aria-label="Github" rel="noopener noreferrer">
                     <i class="fab fa-github" style={style.socialMediaIcon}></i>
-                </div>
-                <div className='main-content-icon' to='#'>
+                </a>
+                <a href="https://www.linkedin.com/in/ana-oktaviana/" className='main-content-icon' target="_blank" aria-label="LinkedIn" rel="noopener noreferrer">
                     <i class="fab fa-linkedin" style={style.socialMediaIcon}></i>
-                </div>
-                <div className='main-content-icon' to='#'>
+                </a>
+                <a href="https://twitter.com/ana_oktaa" className='main-content-icon' target="_blank" aria-label="Twitter" rel="noopener noreferrer">
                     <i class="fab fa-twitter" style={style.socialMediaIcon}></i>
-                </div>
-                <div className='main-content-icon' to='#'>
+                </a>
+                <a href="https://www.instagram.com/anaoktaa/" className='main-content-icon' target="_blank" aria-label="Instagram" rel="noopener noreferrer">
                     <i class="fab fa-instagram" style={style.socialMediaIcon}></i>
-                </div>
+                </a>
             </div>
-            <Button>Show More</Button>
+            <Button onClick={handleContact}>Contact Me</Button>
             <Particles
                 actualHeight={actualHeight}
                 actualWidth={actualSize.width}

@@ -50,15 +50,15 @@ const Contact = () => {
                         Want to say hi, let's connect through social media.
                     </p>
                     <div className='about-medsoc-icon'>
-                        <div className='main-content-icon' to='#'>
+                        <a href="https://www.linkedin.com/in/ana-oktaviana/" className='main-content-icon' target="_blank" aria-label="LinkedIn" rel="noopener noreferrer">
                             <i class="fab fa-linkedin" style={style.socialMediaIcon}></i>
-                        </div>
-                        <div className='main-content-icon' to='#'>
+                        </a>
+                        <a href="https://twitter.com/ana_oktaa" className='main-content-icon' target="_blank" aria-label="Twitter" rel="noopener noreferrer">
                             <i class="fab fa-twitter" style={style.socialMediaIcon}></i>
-                        </div>
-                        <div className='main-content-icon' to='#'>
+                        </a>
+                        <a href="https://www.instagram.com/anaoktaa/" className='main-content-icon' target="_blank" aria-label="Instagram" rel="noopener noreferrer">
                             <i class="fab fa-instagram" style={style.socialMediaIcon}></i>
-                        </div>
+                        </a>
                     </div>
                 </div>
             </div>

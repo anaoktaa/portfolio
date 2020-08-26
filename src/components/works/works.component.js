@@ -46,14 +46,20 @@ const Works = () => {
         window.addEventListener('scroll', initialRef, { passive: true });
         return () => window.removeEventListener('scroll', initialRef);
     
-      }, [initialRef]);
+    }, [initialRef]);
 
+    const handleVisit = () => {
+        console.log("KESINI LAAH")
+        window.open(modalDetail.url, "_blank");
+    }
+    
     const workList = [
         {
             id: 1,
             type: 'Website',
             name: 'Voltras Xpress Nusantara - Courier Website',
             image: un2,
+            url: 'https://vxn.co.id/',
             description: 'Website for courier service that provides domestic delivery for document and package supported by operational network throughout in Indonesia. My responsible are developing, integrating and maintaining the website.'
         },
         {
@@ -61,6 +67,7 @@ const Works = () => {
             type: 'Feature',
             name: 'Samolnas - Samsat Online Nasional ',
             image: un3,
+            url: 'https://www.travelagent.co.id/',
             description: 'Feature online payments for motor vehicle tax (PKB) and road traffic accident fund compulsory donations (SWDKLLJ).'
         },
         {
@@ -68,21 +75,24 @@ const Works = () => {
             type: 'Personal Project - Website',
             name: 'BerryBerry - Fashion E-Commerce',
             image: un1,
-            description: 'Create fashion e-commerce with react, redux, react router, styled, stripe and firebase.'
+            url: 'https://berryberri.netlify.app/',
+            description: 'BerryBerri is fashion online store, that inspired by Zalora and Berrybenka. BerryBerri is created with React, Redux, Firebase and Stripe. '
         },
         {
             id: 4,
             type: 'React Component',
             name: 'React Analog Clock',
             image: un4,
-            description: 'Create fashion e-commerce with react, redux, react router, styled, stripe and firebase.'
+            url: 'https://github.com/anaoktaa/react-analog-clock/',
+            description: 'React analog clock is a customizable analog clock component build using React. It provides an easy way of adding a clock for your application. It is customizable by passing properties to the component.'
         },
         {
             id: 5,
             type: 'React Component',
             name: 'React Datepicker',
             image: un5,
-            description: 'Create fashion e-commerce with react, redux, react router, styled, stripe and firebase.'
+            url: 'https://github.com/anaoktaa/datepicker',
+            description: 'React datepicker is an awesome customizable datepicker component build using React and date-fns. It provides multi language (using date-fns) and customizable properties.'
         }
     ]
     
@@ -123,7 +133,8 @@ const Works = () => {
                                 </div>
                                     <h3>{modalDetail.name}</h3>
                                 <p>{modalDetail.description}<br/></p>
-                                <Button>Visit Website</Button>
+                             
+                                <Button onClick={handleVisit}>Visit Website</Button>
                             </div>
                         </Modal>
                         : null
