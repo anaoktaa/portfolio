@@ -49,8 +49,11 @@ const Works = () => {
     }, [initialRef]);
 
     const handleVisit = () => {
-        console.log("KESINI LAAH")
         window.open(modalDetail.url, "_blank");
+    }
+
+    const handleVisitRepository = () => {
+        window.open(modalDetail.repo, "_blank");
     }
     
     const workList = [
@@ -76,7 +79,7 @@ const Works = () => {
             name: 'BerryBerry - Fashion E-Commerce',
             image: un1,
             url: 'https://berryberri.netlify.app/',
-            github: 'https://github.com/anaoktaa/berryberri-fashion-e-commerce',
+            repo: 'https://github.com/anaoktaa/berryberri-fashion-e-commerce',
             description: 'BerryBerri is fashion online store, that inspired by Zalora and Berrybenka. BerryBerri is created with React, Redux, Firebase and Stripe. '
         },
         {
@@ -85,7 +88,7 @@ const Works = () => {
             name: 'React Analog Clock',
             image: un4,
             url: 'https://anaoktaa.github.io/react-analog-clock/',
-            github: 'https://github.com/anaoktaa/react-analog-clock',
+            repo: 'https://github.com/anaoktaa/react-analog-clock',
             description: 'React analog clock is a customizable analog clock component build using React. It provides an easy way of adding a clock for your application. It is customizable by passing properties to the component.'
         },
         {
@@ -94,7 +97,7 @@ const Works = () => {
             name: 'React Datepicker',
             image: un5,
             url: 'https://anaoktaa.github.io/datepicker/',
-            github: 'https://github.com/anaoktaa/datepicker',
+            repo: 'https://github.com/anaoktaa/datepicker',
             description: 'React datepicker is an awesome customizable datepicker component build using React and date-fns. It provides multi language (using date-fns) and customizable properties.'
         }
     ]
@@ -137,7 +140,14 @@ const Works = () => {
                                     <h3>{modalDetail.name}</h3>
                                 <p>{modalDetail.description}<br/></p>
                              
-                                <Button onClick={handleVisit}>Visit Website</Button>
+                                <Button style={{marginRight: '20px'}} onClick={handleVisit}>Visit Website</Button>
+                                {
+                                    modalDetail.repo?
+                                    <Button className='info' onClick={handleVisitRepository}>Visit Repository</Button>
+                                    :
+                                    null
+                                }
+                         
                             </div>
                         </Modal>
                         : null
