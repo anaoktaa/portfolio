@@ -1,7 +1,6 @@
 # Ana's Portfolio Website
 
 ## Technologies
-* JavaScript (ES6+)
 * React.js
 
 
