@@ -59,7 +59,7 @@ const MainContent = ({ actualSize }) => {
                 </LazyLoad> 
             </div>
             <p className='main-content-title'>Ana Oktaviana</p>
-            <p className='main-content-what-i-am'>I'm a Front End Developer</p>
+            <p className='main-content-what-i-am'>I'm a Frontend Developer</p>
             <div className='main-content-media-social'>
                 <a href="https://github.com/anaoktaa" className='main-content-icon' target="_blank" aria-label="Github" rel="noopener noreferrer">
                     <i class="fab fa-github" style={style.socialMediaIcon}></i>

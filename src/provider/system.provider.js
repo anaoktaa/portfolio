@@ -2,7 +2,7 @@ import React, { createContext, useState } from 'react';
 
 
 export const SystemContext = createContext({
-    mode: 'dark',
+    mode: 'light',
     main: null,
     about: null,
     experiences: null,
@@ -27,7 +27,7 @@ export const SystemContext = createContext({
 });
 
 const SystemProvider = ({ children }) => {
-    const [ mode, setModeBackground ] = useState('dark');  
+    const [ mode, setModeBackground ] = useState('light');  
     const [ main, setMainRef ] = useState(null);  
     const [ about, setAboutRef ] = useState(null);  
     const [ works, setWorksRef ] = useState(null);  

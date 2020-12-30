@@ -56,26 +56,27 @@ const Works = () => {
     const workList = [
         {
             id: 1,
-            type: 'Website',
+            type: 'Menus and Features',
             name: 'Voltras Xpress Nusantara - Courier Website',
             image: un2,
             url: 'https://vxn.co.id/',
-            description: 'Website for courier service that provides domestic delivery for document and package supported by operational network throughout in Indonesia. My responsible are developing, integrating and maintaining the website.'
+            description: 'Website for courier service that provides domestic delivery for document and package supported by operational network throughout in Indonesia. My responsible are develop, test and maintain the website.'
         },
         {
             id: 2,
             type: 'Feature',
-            name: 'Samolnas - Samsat Online Nasional ',
+            name: 'Health Product - VAN',
             image: un3,
             url: 'https://www.travelagent.co.id/',
-            description: 'Feature online payments for motor vehicle tax (PKB) and road traffic accident fund compulsory donations (SWDKLLJ).'
+            description: 'Online features for ordering rapid tests, Polymerase Chain Reaction (PCR), and vaccines for several Kimia Farma clinics in Jakarta and Bandung.'
         },
         {
             id: 3,
-            type: 'Personal Project - Website',
+            type: ' Website',
             name: 'BerryBerry - Fashion E-Commerce',
             image: un1,
             url: 'https://berryberri.netlify.app/',
+            github: 'https://github.com/anaoktaa/berryberri-fashion-e-commerce',
             description: 'BerryBerri is fashion online store, that inspired by Zalora and Berrybenka. BerryBerri is created with React, Redux, Firebase and Stripe. '
         },
         {
@@ -83,7 +84,8 @@ const Works = () => {
             type: 'React Component',
             name: 'React Analog Clock',
             image: un4,
-            url: 'https://github.com/anaoktaa/react-analog-clock/',
+            url: 'https://anaoktaa.github.io/react-analog-clock/',
+            github: 'https://github.com/anaoktaa/react-analog-clock',
             description: 'React analog clock is a customizable analog clock component build using React. It provides an easy way of adding a clock for your application. It is customizable by passing properties to the component.'
         },
         {
@@ -91,14 +93,15 @@ const Works = () => {
             type: 'React Component',
             name: 'React Datepicker',
             image: un5,
-            url: 'https://github.com/anaoktaa/datepicker',
+            url: 'https://anaoktaa.github.io/datepicker/',
+            github: 'https://github.com/anaoktaa/datepicker',
             description: 'React datepicker is an awesome customizable datepicker component build using React and date-fns. It provides multi language (using date-fns) and customizable properties.'
         }
     ]
     
     return  (
         <div ref={worksContentRef} className='experiences-container'>
-            <p className='main-content-title'>Recent Work</p>
+            <p className='main-content-title'>Project</p>
             <div className='works-sub-container'>
                 {
                     workList.map((item) => (

@@ -24,7 +24,7 @@
 
 .about-me-detail {
     box-shadow: 2px 2px 12px var(--shadow);
-    padding: 10px 20px;
+    padding: 20px;
     background-color: var(--basic-color);
     width: 57vw;
     border-radius: 20px;
@@ -36,14 +36,39 @@
 .about-me-detail-description p {
     line-height: 28px;
     font-size: 16px;
+    margin: 0 0 10px;
+    padding: 0;
 }
 
 .about-me-detail-description {
     width: 47%;
 }
 
+.tech-stack-2 {
+    padding: 8px 20px;
+    margin-bottom: 15px;
+    color: white;
+    font-size: 14px;
+    border-radius: 20px;
+    margin-right: 10px;
+}
+
 .about-me-detail-skill {
     width: 47%;
+}
+
+.tech-stack-container {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.about-detail-text {
+    font-size: 19px !important;
+    font-weight: bold;
+    margin: 0 0 10px !important;
+    padding: 0;
 }
 
 .skill {

@@ -36,20 +36,24 @@ const Experiences = () => {
             title: 'Telecommunication Engineering - Telkom University',
             desc: 'Started study in 2013 and graduated in 2017 with GPA 3.76 from 4.00'
         },
+   
+    ]
+
+    const orgList = [
         {
-            id: 2,
+            id: 1,
             year: '2014 - 2016',
             title: 'Daskom Laboratory - Telkom University',
             desc: 'Practicum Assistant of Algorithm and Programming Laboratory'
         },
         {
-            id: 3,
+            id: 2,
             year: '2015',
             title: 'HMTT (Himpunan Mahasiswa Teknik Telekomunikasi) - Telkom University',
             desc: 'Asterisk (Committee of Telecommunication Engineering Orientation Program)'
         },
         {
-            id: 4,
+            id: 3,
             year: '2016',
             title: 'CNC Laboratory - Telkom University',
             desc: 'Research Assistant of Computer and Communication Laboratory, Web Development Division'
@@ -68,7 +72,7 @@ const Experiences = () => {
             id: 6,
             year: '2018 - Present',
             title: 'Software Engineer - Voltras International',
-            desc: 'Responsible for developing, testing and integrating some projects and features such as VXN (courier services), backoffice system, SAMOLNAS (Samsat Online Nasional) and health product in VAN',
+            desc: 'Responsible for develop, test and maintain some projects and features such as VXN (courier services), office backoffice system (Cellink), health product in VAN and Koperasi',
             tech: ['HTML', 'CSS', 'Bootstrap', 'Material-UI', 'React', 'Redux']
         },
     ]
@@ -80,54 +84,80 @@ const Experiences = () => {
     }
     return (
         <section ref={experiencesContentRef} className='experiences-container'>
-            <p className='main-content-title'>Experiences</p>
+            <p className='main-content-title'>Experience</p>
             <div className='experiences-sub-container'>
                 <div className='experiences-sub'>
-                    {
-                        educationList.map(({ id, year, title, desc }) => (
-                            <div key={id} className='experience-main'>
-                                <div className='exp-progress'>
-                                    <div className='exp-icon'>
-                                        <i class="fas fa-graduation-cap" style={styleIcon.icon}></i>
+                    <div className='exp-sub-container'>
+                        <p className='exp-title'>Education</p>
+                        {
+                            educationList.map(({ id, year, title, desc }) => (
+                                <div key={id} className='experience-main'>
+                                    <div className='exp-progress'>
+                                        <div className='exp-icon'>
+                                            <i class="fas fa-graduation-cap" style={styleIcon.icon}></i>
+                                        </div>
+                                        <div className='vertical-line'></div>
                                     </div>
-                                    <div className='vertical-line'></div>
+                                    <div className='exp-description'>
+                                        <p className='year'>{year}</p>
+                                        <p className='title'>{title}</p>
+                                        <p className='desc'>{desc}</p>
+                                    </div>
                                 </div>
-                                <div className='exp-description'>
-                                    <p className='year'>{year}</p>
-                                    <p className='title'>{title}</p>
-                                    <p className='desc'>{desc}</p>
+                            ))
+                        }
+                    </div>
+                    <div className='exp-sub-container'>
+                        <p className='exp-title'>Organization</p>
+                        {
+                            orgList.map(({ id, year, title, desc }) => (
+                                <div key={id} className='experience-main'>
+                                    <div className='exp-progress'>
+                                        <div className='exp-icon'>
+                                            <i class="fas fa-graduation-cap" style={styleIcon.icon}></i>
+                                        </div>
+                                        <div className='vertical-line'></div>
+                                    </div>
+                                    <div className='exp-description'>
+                                        <p className='year'>{year}</p>
+                                        <p className='title'>{title}</p>
+                                        <p className='desc'>{desc}</p>
+                                    </div>
                                 </div>
-                            </div>
-                        ))
-                    }
+                            ))
+                        }
+                    </div>
                 </div>
                 
                 <div className='experiences-sub'>
-                    {
-                        workList.map(({ id, year, title, desc, tech }) => (
-                            <div key={id} className='experience-main'>
-                                <div className='exp-progress'>
-                                    <div className='exp-icon'>
-                                        <i class="fas fa-briefcase" style={styleIcon.icon}></i>
+                    <div className='exp-sub-container'>
+                        <p className='exp-title'>Education</p>
+                        {
+                            workList.map(({ id, year, title, desc, tech }) => (
+                                <div key={id} className='experience-main'>
+                                    <div className='exp-progress'>
+                                        <div className='exp-icon'>
+                                            <i class="fas fa-briefcase" style={styleIcon.icon}></i>
+                                        </div>
+                                        <div className='vertical-line'></div>
                                     </div>
-                                    <div className='vertical-line'></div>
-                                </div>
-                                <div className='exp-description'>
-                                    <p className='year'>{year}</p>
-                                    <p className='title'>{title}</p>
-                                    <p className='desc'>{desc}</p>
-                                    <div className='tech-stack-container'>
-                                        {
-                                            tech.map((techStack) => (
-                                                <div key={techStack} className='tech-stack'>#{techStack}</div>
-                                            ))
-                                        }
+                                    <div className='exp-description'>
+                                        <p className='year'>{year}</p>
+                                        <p className='title'>{title}</p>
+                                        <p className='desc'>{desc}</p>
+                                        <div className='tech-stack-container'>
+                                            {
+                                                tech.map((techStack) => (
+                                                    <div key={techStack} className='tech-stack'>#{techStack}</div>
+                                                ))
+                                            }
+                                        </div>
+                                
                                     </div>
-                               
                                 </div>
-                            </div>
-                        ))
-                    }
+                            ))
+                        }
+                    </div>
                 </div>
             </div>
         </section>

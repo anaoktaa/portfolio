@@ -14,6 +14,10 @@
   --main-padding: 50px;
   --main-horizontal-padding: 150px;
   --main-vertical-padding: 10px;
+  --danger-color: #f33a4e;
+  --warning-color:  #ffd05c;
+  --success-color: #44d7b6;
+  --info-color: #6c6ce5;
 }
 [data-theme='dark'] {
   --main-bg-color: #353353;
@@ -24,6 +28,22 @@
   --main-padding: 50px;
   --main-horizontal-padding: 150px;
   --main-vertical-padding: 10px;
+}
+
+.danger {
+  background-color: var(--danger-color) !important;
+}
+
+.warning {
+  background-color: var(--warning-color) !important;
+}
+
+.success {
+  background-color: var(--success-color) !important;
+}
+
+.info {
+  background-color: var(--info-color) !important;
 }
 
 @media screen and (max-width: 1024px) {
